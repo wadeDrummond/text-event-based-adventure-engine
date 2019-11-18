@@ -1,0 +1,3 @@
+///GameReturnHealth();
+
+return statsMap[? "Health"];

@@ -1,0 +1,3 @@
+///GameReturnStrength();
+
+return statsMap[? "Strength"];

@@ -1,0 +1,3 @@
+///GameReturnAge();
+
+return statsMap[? "Age"];

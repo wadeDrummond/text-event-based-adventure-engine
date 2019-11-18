@@ -1,0 +1,3 @@
+///GameReturnCharisma();
+
+return statsMap[? "Charisma"];
