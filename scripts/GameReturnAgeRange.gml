@@ -1,0 +1,3 @@
+///GameReturnAgeRange();
+
+GameReturnStat("ageRange");

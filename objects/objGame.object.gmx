@@ -27,10 +27,12 @@
             <kind>1</kind>
             <string>///Initialize
 
+GameInitEffects();
 GameInitStats();
 GameInitText();
-
-GameEventFirst();
+GameInitEvents();
+GameInitInputs();
+GameInitChoices();
 </string>
           </argument>
         </arguments>
@@ -53,7 +55,19 @@ GameEventFirst();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(ord("R"))
+            <string>///Run Variables
+
+switch (stateCurrent)   {
+    case eGAME_STATES.Normal:
+        choicesAlpha = lerp(choicesAlpha, 0, 0.1);
+        break;
+    case eGAME_STATES.Choices:
+        GameStepInputChoices();
+        choicesAlpha = lerp(choicesAlpha, 1, 0.1);
+        break;
+}
+
+if keyboard_check_pressed(ord("R"))
     room_restart()
 </string>
           </argument>
@@ -82,12 +96,16 @@ GameEventFirst();
 //Hardcoded Events
 switch (GameReturnAge())    {
     case 0:
-        GameEventBirth();
+        GameEventScriptedBirth();
+        break;
+    default:
+        GameExecuteEventRandom(80, 50);
         break;
 }
 
 //Age Up
 GameSetAge(GameReturnAge() + 1);
+GameSetAgeRange(GameReturnAge());
 </string>
           </argument>
         </arguments>
@@ -114,6 +132,7 @@ GameSetAge(GameReturnAge() + 1);
 
 GameDrawTextBorder();
 GameDrawText();
+GameDrawChoices();
 GameDrawStats();
 </string>
           </argument>

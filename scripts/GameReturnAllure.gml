@@ -1,3 +1,3 @@
 ///GameReturnAllure();
 
-return statsMap[? "Allure"];
+return GameReturnStat("Allure");

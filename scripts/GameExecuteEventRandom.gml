@@ -1,10 +1,16 @@
-///GameExecuteEventRandom(chance);
+///GameExecuteEventRandom(perform_chance, bad_chance);
 
-var _inChance = argument[0];
-var _inRoll = irandom(100);
+var _inChancePerform = argument[0];
+var _inChanceBad = argument[1];
+var _inRollPerform = irandom(100);
+var _inRollBad = irandom(100);
 
-if (_inRoll >= (100 - _inChance))  {
-    GameExecuteEventChoose();
+if (_inRollPerform >= (100 - _inChancePerform))  {
+    if (_inRollBad >= (100 - _inChanceBad)) {
+        GameExecuteEventRandomList(eventsListBad);
+    }   else    {
+        GameExecuteEventRandomList(eventsListGood);
+    }
 }   else    {
-    print("Event fails, random roll is too low", _inChance, _inRoll);
+    print("Event fails, random roll is too low", _inChancePerform, _inRollPerform);
 }

@@ -9,9 +9,12 @@ draw_set_font(fontText);
 for (var i = textGridHeight - 1; i > 0; i --)   {
     var _drawString = textGrid[# 0, i];
     var _drawColour = textGrid[# 1, i];
+    
+    if (i != textGridHeight - 1)    {
+        var _drawColour = merge_colour(_drawColour, c_black, 0.65);
+    }
 
     draw_text_parameters(fa_left, fa_bottom, _drawX, _drawY, _drawString, 1, _drawColour, textDrawShadow, textDrawScale, 0);
-    
     var _drawHeight = (string_height(_drawString) * textDrawScale) + _drawTextOffset;
     _drawY -= _drawHeight;
     

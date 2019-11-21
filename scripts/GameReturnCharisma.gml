@@ -1,3 +1,3 @@
 ///GameReturnCharisma();
 
-return statsMap[? "Charisma"];
+return GameReturnStat("Charisma");

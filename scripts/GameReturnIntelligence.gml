@@ -1,3 +1,3 @@
 ///GameReturnIntelligence();
 
-return statsMap[? "Intelligence"];
+return GameReturnStat("Intelligence");

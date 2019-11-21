@@ -7,7 +7,8 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sprButtonAge</sprite>
-    <sprite>sprites\sprDeveloper</sprite>
+    <sprite>sprites\sprButtonDeveloper</sprite>
+    <sprite>sprites\nsTextbox</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -20,32 +21,46 @@
       <script>scripts\wave.gml</script>
       <script>scripts\is_between.gml</script>
       <script>scripts\string_wordwrap_width.gml</script>
+      <script>scripts\draw_circle_width.gml</script>
     </scripts>
     <scripts name="Game">
       <scripts name="Draw">
         <script>scripts\GameDrawStats.gml</script>
         <script>scripts\GameDrawText.gml</script>
         <script>scripts\GameDrawTextBorder.gml</script>
+        <script>scripts\GameDrawChoices.gml</script>
+      </scripts>
+      <scripts name="Events">
+        <script>scripts\GameEventBadInfantMysteryMan.gml</script>
+        <script>scripts\GameEventGoodInfantTalking.gml</script>
+        <script>scripts\GameEventScriptedBirth.gml</script>
+        <script>scripts\GameEventScriptedFirst.gml</script>
+        <scripts name="Return">
+          <script>scripts\GameReturnEventType.gml</script>
+          <script>scripts\GameReturnEventValid.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Execute">
         <script>scripts\GameExecuteAddText.gml</script>
-        <script>scripts\GameExecuteEventChoose.gml</script>
+        <script>scripts\GameExecuteChoices.gml</script>
         <script>scripts\GameExecuteEventRandom.gml</script>
+        <script>scripts\GameExecuteEventRandomList.gml</script>
         <script>scripts\GameExecuteStatsAllocate.gml</script>
         <script>scripts\GameExecuteStatsBlank.gml</script>
       </scripts>
       <scripts name="Init">
+        <script>scripts\GameInitChoices.gml</script>
+        <script>scripts\GameInitEffects.gml</script>
+        <script>scripts\GameInitEvents.gml</script>
+        <script>scripts\GameInitInputs.gml</script>
         <script>scripts\GameInitMaster.gml</script>
         <script>scripts\GameInitStats.gml</script>
         <script>scripts\GameInitText.gml</script>
       </scripts>
-      <scripts name="Events">
-        <script>scripts\GameEventFirst.gml</script>
-        <script>scripts\GameEventBirth.gml</script>
-      </scripts>
       <scripts name="Stats">
         <scripts name="Set">
           <script>scripts\GameSetAge.gml</script>
+          <script>scripts\GameSetAgeRange.gml</script>
           <script>scripts\GameSetAllure.gml</script>
           <script>scripts\GameSetCharisma.gml</script>
           <script>scripts\GameSetHealth.gml</script>
@@ -62,6 +77,7 @@
         </scripts>
         <scripts name="Return">
           <script>scripts\GameReturnAge.gml</script>
+          <script>scripts\GameReturnAgeRange.gml</script>
           <script>scripts\GameReturnAgeTitle.gml</script>
           <script>scripts\GameReturnAllure.gml</script>
           <script>scripts\GameReturnAllureTitle.gml</script>
@@ -72,22 +88,41 @@
           <script>scripts\GameReturnIntelligence.gml</script>
           <script>scripts\GameReturnIntelligenceTitle.gml</script>
           <script>scripts\GameReturnStat.gml</script>
+          <script>scripts\GameReturnStatsTitlesArray.gml</script>
+          <script>scripts\GameReturnStatsColoursArray.gml</script>
+          <script>scripts\GameReturnStatColour.gml</script>
           <script>scripts\GameReturnStrength.gml</script>
           <script>scripts\GameReturnStrengthTitle.gml</script>
         </scripts>
       </scripts>
+      <scripts name="Step">
+        <script>scripts\GameStepInputChoices.gml</script>
+      </scripts>
     </scripts>
+    <script>scripts\nineslice.gml</script>
   </scripts>
-  <shaders name="shaders"/>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shdCRT.shader</shader>
+  </shaders>
   <fonts name="fonts">
     <font>fonts\fontText</font>
   </fonts>
   <objects name="objects">
-    <object>objects\objButtonAge</object>
-    <object>objects\objDeveloper</object>
-    <object>objects\objGame</object>
-    <object>objects\objInit</object>
-    <object>objects\parButton</object>
+    <objects name="Buttons">
+      <object>objects\objButtonAge</object>
+      <object>objects\objButtonDeveloper</object>
+    </objects>
+    <objects name="Controllers">
+      <object>objects\objGame</object>
+      <object>objects\objInit</object>
+    </objects>
+    <objects name="Effects">
+      <object>objects\objCRT</object>
+      <object>objects\objBackground</object>
+    </objects>
+    <objects name="Parents">
+      <object>objects\parButton</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>

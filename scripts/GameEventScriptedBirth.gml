@@ -1,4 +1,4 @@
-///GameEventBirth();
+///GameEventScriptedBirth();
 
 var _returnText = "ERR";
 var _returnColour = textColourDefault;

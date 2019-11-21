@@ -41,6 +41,10 @@ drawColour = drawColourNormal;
 drawColourTarget = drawColour;
 
 lerpSpeed = 0.15;
+
+buttonIndex = instance_number(parButton) + 2;
+
+image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -93,6 +97,8 @@ drawColour = merge_colour(drawColour, drawColourTarget, lerpSpeed);
 
 drawScaleTarget = drawScaleNormal;
 drawColourTarget = drawColourNormal;
+image_speed = 0;
+image_index = 0;
 window_set_cursor(cr_default);
 </string>
           </argument>
@@ -120,6 +126,7 @@ window_set_cursor(cr_default);
 
 drawScaleTarget = drawScaleMax;
 drawColourTarget = drawColourMax;
+image_speed = 0.25;
 window_set_cursor(cr_handpoint);
 </string>
           </argument>
